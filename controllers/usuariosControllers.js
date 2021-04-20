@@ -4,13 +4,13 @@ const { Op } = require('sequelize');
 
 const usuariosController = {
     index: async (req, res) => {
-        let usuarios = await Usuario.findAll({
-            oder:[
-                ['id', 'ASC'] // ASC = maior pro menor, DESC = menor pro maior
-            ],
-            limit: 5, // limita o numero de resulados excelente para paginação
-        })
-        return res.json(usuarios);
+        let usuarios = await Usuario.findAll();
+        //     oder:[
+        //         ['id', 'ASC'] // ASC = maior pro menor, DESC = menor pro maior
+        //     ],
+        //     limit: 5, // limita o numero de resulados excelente para paginação
+        // })
+        return res.render('usuarios',{lsitarUsuarios: usuarios});
     },
     create: async (req, res) => {
         let { nome, email, senha } = req.body;

@@ -9,7 +9,7 @@ module.exports = async (req, res, next) => {
         if (!email || !nome || !senha) {
             res.status(400).json({ erro: "Nome, email ou senha não informados." });
         } else {
-            if ((senha.length < 6) || (senha.length > 12)) {
+            if ((senha.length < 6 || senha.length > 12)) {
                 res.status(400).json({ erro: "A senha precisa ter entre 6 e 12 caracteres." });
             } else {
                 next();
