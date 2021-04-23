@@ -4,7 +4,7 @@ module.exports = async (req, res, next) => {
     let { email, nome, senha } = req.body;
     let user = await Usuario.findAll({ where: { email } });
     if (user.length) {
-        res.status(400).json({ erro: "Email já cadastrado" });
+        res.status(400).json( {erro: "Email já cadastrado" });
     } else {
         if (!email || !nome || !senha) {
             res.status(400).json({ erro: "Nome, email ou senha não informados." });
