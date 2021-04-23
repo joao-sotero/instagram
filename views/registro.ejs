@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Cadastro</title>
+</head>
+<body>
+    <main>
+        <div class= "banner">
+            <img src="/img/banner-login.png" alt="banner-login" class="banner">
+            <br><p>Cadastre-se para ver as fotos dos seus amigos</p>
+        </div>
+        <div class="login">
+            <img src="/img/logo.png" alt="instagram" class="logo" >
+            <form action="/usuarios" method="POST">
+                <input type="nome" name="nome" id="nome" placeholder="Digite nome">
+                <input type="email" nome="email" id="email" placeholder="Digite seu email">
+                <input type="password" nome="senha" id="senha" placeholder="Digite sua senha">
+                <input type="password" nome="senhaConf" id="senhaConf" placeholder="Confirme sua senha">
+                <button type="submit">Cadastre-se</button>
+            </form>
+            <div class= " termos">Ao se cadastrar, você concorda com nossos <a href="">
+                <strong>
+                    Termos, Políticas de Dados e Política de Cookies
+            </strong>
+        </a>
+    </div>
+            <div class="cta-cadastro">
+                <p>Não tem uma conta?<a href="/views/login.ejs"> <strong>Conecte-se</strong></a></p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

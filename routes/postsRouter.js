@@ -4,9 +4,10 @@ const postsController = require('../controllers/postController')
 
 /* GET users listing. */
 router.get('/', postsController.index);
-router.post('/',postsController.create);
-router.put('/:id',postsController.update);
-router.delete('/:id',postsController.delete);
 router.get('/:id',postsController.show);
+router.post('/create',postsController.create);
+router.put('/update/:id',postsController.update);
+router.delete('/delete/:id',postsController.delete);
+
 
 module.exports = router;

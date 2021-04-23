@@ -1,11 +1,53 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="css/stylePost.css">
+</head>
+
+<body>
+    <header>
+        <a href="/views/login.ejs"><img src="img/logo.png" alt="Instagram" class="logo"></a>
+    </header>
+    <main>
+        <% for(let post of listarPosts) {%>            
+        <article>
+            <div class="post-header">
+                <div class="usuario">
+                    <img src="img/avatar-example.png" alt="Foto de Gabriel">
+                    <strong><%= post.usuario.nome  %> </strong>
+                </div>
+                <button><img src="img/icons/more-vertical.svg" alt="ver mais"></button>
+            </div>
+            <div class="img-principal" title="Foto da mesa do almoço"
+                style="background-image: url('<%= post.img %>');"></div>
+            <div class="comentarios">
+                <div class="legenda">
+                    <p><%= post.texto %> </p>
+                    <div class="likes">
+                        <img src="img/icons/heart.svg" alt="botão like">
+                        <span><%= post.curtiu.length %> </span>
+                    </div>
+                    <strong class="data">Postado no dia: 16/04/2020</strong>
+                </div>      
+                    <ol>
+                        <% for(let comentario of post.comentarios){ %> 
+                        <li>
+                            <p><%= comentario.texto %> </p>
+                        </li>
+                        <% } %> 
+                    </ol>
+            </div>
+        </article>
+        <% } %> 
+    </main>
+    <footer>
+        copyright - 2021
+    </footer>
+</body>
+
 </html>

@@ -10,7 +10,11 @@ const usuariosController = {
         //     ],
         //     limit: 5, // limita o numero de resulados excelente para paginação
         // })
-        return res.render('usuarios',{lsitarUsuarios: usuarios});
+        return res.render('usuarios',{listarUsuarios: usuarios});
+    },
+
+    registro: (request, response) => {
+        return response.render('registro');
     },
     create: async (req, res) => {
         let { nome, email, senha } = req.body;

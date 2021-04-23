@@ -1,0 +1,64 @@
+
+main{
+    margin-top: 100px;
+}
+
+header {
+    background-color: white;
+    position: fixed;
+    top:0px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+}
+
+header .logo {
+    width: 150px;
+}
+
+article {
+    margin: 20px auto;
+    width: 600px;
+    max-width: 100%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+article .img-principal {
+    /* background-image: url('../img/publication_example.jpg'); */
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+}
+
+article .post-header {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+article .post-header button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+article .post-header .usuario {
+    display: flex;
+}
+
+article .post-header .usuario img {
+    width: 50px;
+    margin-right: 15px;
+}
+
+article .comentarios .legenda {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    vertical-align: center;
+}

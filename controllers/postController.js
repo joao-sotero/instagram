@@ -3,8 +3,10 @@ const { Op } = require('sequelize');
 
 const postsController = {
     index: async (req, res) => {
-        let posts = await Post.findAll();
-        return res.json(posts);
+        let posts = await Post.findAll({
+            include:['usuario', 'comentarios', 'curtiu' ]
+        });
+        return res.render('index',{listarPosts: posts});
     },
     create: async (req, res) =>{
         let {texto, usuario_id, post_id} = req.body;
